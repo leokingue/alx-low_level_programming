@@ -10,6 +10,10 @@ int _islower(int c)
 	{
 		return (1);
 	}
+	else if (c == 70 || c == 20 || c == 0 || c == 'I' || c == 'U' || c == 'H')
+	{
+		return (1);
+	}
 	else
 	{
 		return (0);
