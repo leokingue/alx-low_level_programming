@@ -7,7 +7,18 @@
  */
 int _strlen(char *s)
 {
-	int value = sizeof(s) - 1;
+	int i;
+	int counter;
 
-	return (value);
+	counter = 0;
+	for (i = 0; i >= 0; i++)
+	{
+		if (s[i] == '\0')
+		{
+			break;
+		}
+		counter++;
+	}
+
+	return (counter);
 }
