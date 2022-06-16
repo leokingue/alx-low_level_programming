@@ -19,13 +19,26 @@ void reverse_array(int *a, int n)
 	{
 		if (count != 0)
 		{
-			_putchar(a[count] + '0');
-			_putchar(',');
-			_putchar(' ');
+			if (a[count] % 10 != 0)
+			{
+				_putchar(a[count] / 10);
+			}
+			else
+			{
+				_putchar(a[count] / 10 + '0');
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		else
 		{
-			_putchar(a[count] + '0');
+			if (n / 10 != 0)
+			{
+				print_number(n / 10);
+			}
+			_putchar((n % 10) + '0');
+			_putchar(',');
+			_putchar(' ');
 		}
 	}
 }
