@@ -8,13 +8,16 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
+	char *S[sizeof(char) * n] = &s;
 	int i = 0;
 
-	for (; i < sizeof(char) * n; i++)
+	for (; i >= 0; i++)
 	{
-		if (*(s + i) == '\0')
+		if (*(S + i) == '\0')
+		{
 			break;
-		*(s + i) = b;
+		}
+		*(S + i) = b;
 	}
-	return (s);
+	return (S);
 }
