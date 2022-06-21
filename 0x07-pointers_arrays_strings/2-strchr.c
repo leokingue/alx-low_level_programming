@@ -7,16 +7,18 @@
  */
 char *_strchr(char *s, char c)
 {
-	char *pt = NULL;
-	unsigned int i = 0;
+	int i = 0;
 
-	while (s[i])
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == c)
+		if (c == s[i])
 		{
-			pt = &s[i];
-			return (pt);
+			return (s[i]);
 		}
-		i++;
 	}
+	if (c == s[i])
+	{
+		return (s[i]);
+	}
+	return (NULL);
 }
