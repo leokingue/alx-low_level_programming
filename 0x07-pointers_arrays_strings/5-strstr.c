@@ -1,21 +1,33 @@
 #include "main.h"
 /**
- * _strpbrk - function that searches a string for any of a set of bytes
- * @s:string to check
- * @accept:word to check
+ * _strstr - checking substruing in the string
+ * @haystack:arg1
+ * @needle:arg2
  * Return: Value
  */
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	char *str = haystack;
+	char *word = needle;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*str)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		str = haystack;
+		word = needle;
+
+		while (*word)
 		{
-			if (accept[j] == s[i])
-				return (s + i);
+			if (*str == *word)
+			{
+				word++;
+				str++;
+			}
+			else
+				break;
+			if (*word == '\0')
+				return (haystack);
+			haystack++;
 		}
 	}
-	return (NULL);
+	return (0);
 }
