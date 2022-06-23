@@ -4,11 +4,27 @@
  * @s: pointer argument
  * Return: void
  */
+unsigned int my_strlen(char *s);
 void _puts_recursion(char *s)
 {
-	unsigned int length = (sizeof(s) / sizeof(char));
+	unsigned int length = my_strlen(s);
 
-	if (s[length - 1]  == '\0')
+	if (s[length]  == '\0')
 		_putchar('\n');
-	_putchar(_puts_recursion(*(s + 1));
+	_putchar(*s + 1);
+}
+/**
+ * my_strlen - calculate the length of string
+ * @s: string
+ * Return: value
+ */
+unsigned int my_strlen(char *s)
+{
+	int i, count = 0;
+
+	while (s[i])
+	{
+		count++;
+		i++;
+	}
 }
