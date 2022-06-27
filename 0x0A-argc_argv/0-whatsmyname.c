@@ -1,11 +1,15 @@
 #include "main.h"
 /**
- * whatsmyname - a program that prints its name, followed by a new line.
- * Return: string value
+ * main - a program that prints its name, followed by a new line.
+ * @argc: number of items
+ * @argv: array
+ * Return: value
  */
-char *whatsmyname(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	if (argc < 1)
-		return
+	_putchar(argv[0]);
+	_putchar('\n');
 
+	return (0);
 }
+
