@@ -17,5 +17,4 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	{
 		pointer_to_action(array[i]);
 	}
-	_putchar('\n');
 }
