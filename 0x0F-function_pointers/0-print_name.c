@@ -7,11 +7,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if ((*f) == &print_name_as_is) /*if f = print_name_as_is*/
-	{
-		f(name);
-	}
-	else if ((*f) == &print_name_uppercase)
+	if (f(name))
 	{
 		f(name);
 	}
