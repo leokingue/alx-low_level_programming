@@ -13,8 +13,11 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	void (*pointer_to_action)(int) = action;
 	unsigned long int i;
 
-	for (i = 0; i < size; i++)
+	if (array != NULL && size > 0 && pointer_to_action != NULL)
 	{
-		pointer_to_action(array[i]);
+		for (i = 0; i < size; i++)
+		{
+			pointer_to_action(array[i]);
+		}
 	}
 }
