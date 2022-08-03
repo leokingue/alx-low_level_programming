@@ -1,85 +1,47 @@
-#include "lists.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-int main(int argc, char *argv[])
-{
-	#include <stdlib.h>
-
-#include <string.h>
-
 #include <stdio.h>
-
 #include "lists.h"
+/**
+ * main - check the code
+ * Return: Always 0.
+ */
+int main(void)
+{
+	list_t *head;
+	list_t *new;
+	 list_t *head;
+
+	         list_t hello = {"World", 5, NULL};
+
+		     size_t n;
 
 
 
-	/**
-	 *
-	 *  * main - check the code
-	 *
-	 *   *
-	 *
-	 *    * Return: Always 0.
-	 *
-	 *     */
+		         head = &hello;
 
-	int main(void)
+			     new = malloc(sizeof(list_t));
 
-	{
+			         if (new == NULL)
 
-		    list_t *head;
+					     {
 
-		        list_t *new;
+						             printf("Error\n");
 
-			    list_t hello = {"World", 5, NULL};
+							             return (1);
+								         }
+				     new->str = strdup("Hello");
+	         new->len = 5;
 
-			        size_t n;
+	    new->next = head;
 
+	 head = new;
 
-
-				    head = &hello;
-
-				        new = malloc(sizeof(list_t));
-
-					    if (new == NULL)
-
-						        {
-
-								        printf("Error\n");
-
-									        return (1);
-
-										    }
-
-					        new->str = strdup("Hello");
-
-						    new->len = 5;
-
-						        new->next = head;
-
-							    head = new;
-
-							        n = print_list(head);
-
-								    printf("-> %lu elements\n", n);
-
-
-
-								        printf("\n");
-
-									    free(new->str);
-
-									        new->str = NULL;
-
-										    n = print_list(head);
-
-										        printf("-> %lu elements\n", n);
-
-
-
-											    free(new);
-
-											        return (0);
+	 n = print_list(head);
+	printf("-> %lu elements\n", n);
+        printf("\n");
+	free(new->str);
+	new->str = NULL;
+	n = print_list(head);
+	printf("-> %lu elements\n", n);							 free(new);					     return (0);
 }
