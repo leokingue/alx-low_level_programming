@@ -10,6 +10,7 @@
  *
  *  Description: singly linked list node structure
  */
+typedef enum Bool{false, true}Bool;
 typedef struct list_s
 {
 	char *str;
@@ -17,6 +18,7 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
+Bool is_empty_list(const list_t *h);
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
 list_t *add_node(list_t **head, const char *str);
