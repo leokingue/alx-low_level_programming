@@ -6,21 +6,21 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *new_hash_table;
+	hash_table_t *n_h_table;
 
 	if (size == 0)
 		return (NULL);
-	new_hash_table = malloc(sizeof(*new_hash_table) * size);
-	if (new_hash_table == NULL)
+	n_h_table = malloc(sizeof(*n_h_table) * size);
+	if (n_h_table == NULL)
 	{
 		return (NULL);
 	}
-	new_hash_table->size = size;
-	new_hash_table->array = calloc((size_t)(size), sizeof(hash_table_t *));
-	if (new_hash_table->array == NULL)
+	n_h_table->size = size;
+	n_h_table->array = calloc((size_t)(n_h_table->size), sizeof(hash_table_t *));
+	if (n_h_table->array == NULL)
 	{
 		return (NULL);
 	}
 
-	return (new_hash_table);
+	return (n_h_table);
 }
