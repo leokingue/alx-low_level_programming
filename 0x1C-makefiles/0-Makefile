@@ -1,11 +1,11 @@
 #fisrt makefile
 all: school
 
-school : school.o main.o
+school : main.o school.o
 	gcc -o school school.o main.o
 
-school.o : school.c
+main.o : main.c
 	gcc -o school.o -c school.c
 
-main.o : school.c
+school.o : school.c
 	gcc -o main.o -c main.o
